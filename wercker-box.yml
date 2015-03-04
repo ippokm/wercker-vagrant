@@ -1,13 +1,12 @@
 name: vagrant
 version: 0.0.1
+inherits: wercker/ubuntu12.04-webessentials@1.0.4
 type: main
 platform: ubuntu@12.04
-inherits: wercker/ubuntu12.04-webessentials@1.0.4
 description: wercker box for runnig vagrant
 keywords:
   - vagrant
-
-script:
+script: |
   VAGRANT_VERSION=1.7.2
   wget https://dl.bintray.com/mitchellh/vagrant/vagrant_${ VAGRANT_VERSION}_x86_64.deb
   sudo dpkg -i vagrant_${ VAGRANT_VERSION}_x86_64.deb
